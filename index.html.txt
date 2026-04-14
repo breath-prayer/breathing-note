@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>호흡 노트</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div id="loginPage" class="page">
+  <h1>🌿 호흡 노트</h1>
+
+  <input id="loginName" placeholder="이름"/>
+  <input id="loginBirth" placeholder="생년월일 (예: 900101)"/>
+  <input id="loginPw" placeholder="4자리 비밀번호" type="password"/>
+
+  <button onclick="login()">로그인</button>
+  <button onclick="register()">회원가입</button>
+
+  <p>마스터: 9072</p>
+</div>
+
+<!-- APP -->
+<div id="app" class="hidden">
+
+  <header>
+    <h2>🌿 호흡</h2>
+    <button onclick="logout()">로그아웃</button>
+  </header>
+
+  <nav>
+    <button onclick="showTab('home')">홈</button>
+    <button onclick="showTab('gratitude')">감사</button>
+    <button onclick="showTab('repent')">회개</button>
+    <button onclick="showTab('me')">나를위해</button>
+    <button onclick="showTab('intercession')">중보</button>
+    <button onclick="showTab('done')">완료</button>
+    <button onclick="showTab('group')">모임</button>
+  </nav>
+
+  <!-- HOME -->
+  <div id="home" class="tab">
+    <h3>오늘 기록</h3>
+
+    <input type="date" id="date"/>
+
+    <input id="mood" placeholder="마음상태"/>
+    <input id="place" placeholder="장소"/>
+    <textarea id="verse" placeholder="묵상 말씀"></textarea>
+
+    <textarea id="reflection" placeholder="자유 묵상 (묵상/깨달음/실천)"></textarea>
+
+    <button onclick="saveAll()">💾 저장</button>
+  </div>
+
+  <!-- GRATITUDE -->
+  <div id="gratitude" class="tab hidden">
+    <h3>감사 제목</h3>
+    <input id="gratitudeInput"/>
+    <button onclick="add('gratitude')">추가</button>
+    <div id="gratitudeList"></div>
+  </div>
+
+  <!-- REPENT -->
+  <div id="repent" class="tab hidden">
+    <h3>회개 & 결단</h3>
+    <input id="repentInput"/>
+    <input id="repentReply" placeholder="앞으로의 결단"/>
+    <button onclick="add('repent')">추가</button>
+    <div id="repentList"></div>
+  </div>
+
+  <!-- ME -->
+  <div id="me" class="tab hidden">
+    <h3>나를 위한 기도</h3>
+    <input id="meInput"/>
+    <select id="meCat">
+      <option>개인</option>
+      <option>일</option>
+      <option>공부</option>
+      <option>진로</option>
+      <option>건강</option>
+      <option>성장</option>
+      <option>사랑</option>
+    </select>
+    <button onclick="add('me')">추가</button>
+    <div id="meList"></div>
+  </div>
+
+  <!-- INTERCESSION -->
+  <div id="intercession" class="tab hidden">
+    <h3>중보기도</h3>
+    <input id="interInput"/>
+    <select id="interCat">
+      <option>가족</option>
+      <option>친구</option>
+      <option>회사</option>
+      <option>교회</option>
+      <option>지역</option>
+      <option>나라</option>
+    </select>
+    <button onclick="add('intercession')">추가</button>
+    <div id="interList"></div>
+  </div>
+
+  <!-- DONE -->
+  <div id="done" class="tab hidden">
+    <h3>완료</h3>
+    <div id="doneList"></div>
+  </div>
+
+  <!-- GROUP (simplified MVP) -->
+  <div id="group" class="tab hidden">
+    <h3>모임</h3>
+    <p>모임 기능 (MVP)</p>
+    <input id="groupName" placeholder="모임 이름"/>
+    <input id="groupPw" placeholder="모임 비밀번호"/>
+    <button onclick="createGroup()">생성</button>
+    <div id="groupList"></div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

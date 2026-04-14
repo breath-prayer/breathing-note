@@ -1,0 +1,66 @@
+body {
+  font-family: sans-serif;
+  background: #f6f7fb;
+  margin: 0;
+}
+
+.page {
+  padding: 20px;
+  text-align: center;
+}
+
+.hidden { display: none; }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: #ffd6e0;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 10px;
+  background: #fff;
+}
+
+nav button {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  background: #dbeafe;
+  border-radius: 10px;
+}
+
+.tab {
+  padding: 10px;
+}
+
+input, textarea, select {
+  width: 100%;
+  margin: 5px 0;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  background: #a7f3d0;
+  border-radius: 10px;
+}
+
+.item {
+  background: white;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 10px;
+}
+
+.done {
+  text-decoration: line-through;
+  color: gray;
+}
